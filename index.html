@@ -7,18 +7,18 @@
     <title>Todo List</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://img.icons8.com/pulsar-gradient/48/to-do.png" type="image/png">
-
 </head>
 
 <body>
     <a href="/index.html" class="logo-link">
-        <div class="logo-container"><img src="todo.svg" alt="To-Do App Logo" width="350" height="400">
+        <div class="logo-container">
+            <img src="todo.svg" alt="To-Do App Logo" width="350" height="400">
         </div>
     </a>
-
-    <h1>To do-App</h1>
+    <h1>To-Do App</h1>
     <form>
-        <input type="text" id="todo-input" placeholder="Add a new task">
+        <input type="text" id="todo-input" placeholder="Add a new task" required>
+        <input type="date" id="due-date-input">
         <button type="submit">Add</button>
     </form>
     <div class="container">
@@ -31,9 +31,6 @@
             <ul id="completed-list"></ul>
         </div>
     </div>
-
-
-
 
     <script src="script.js"></script>
 </body>
