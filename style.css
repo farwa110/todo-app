@@ -115,21 +115,40 @@ button {
   outline: none;
 }
 
+#due-date-input {
+  box-sizing: border-box;
+  padding: 12px 20px;
+  background: none;
+  border: 2px solid var(--secondary-color);
+  border-radius: 1000px;
+  font: inherit;
+  color: var(--text-color);
+  caret-color: var(--accent-color);
+  flex-grow: 1;
+  outline: none;
+}
+
+#due-date-input :hover {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
 .container {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
-  width: 90%;
-  max-width: 1000px;
-  margin-top: 20px;
+  gap: 30px;
+  width: 95%;
+  max-width: 1200px;
+  margin-top: 30px;
 }
 
 .container > div {
-  flex: 1.5;
+  flex: 2;
   background-color: var(--primary-color);
-  padding: 20px;
-  border-radius: 5px;
-  min-width: 300px;
+  padding: 25px;
+  border-radius: 10px;
+  min-width: 350px;
+  min-height: 500px;
 }
 
 .todo {
@@ -189,6 +208,19 @@ input[type="text"] {
   fill: #f03;
 }
 
+.high-priority {
+  padding: 3px;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.high-priority svg {
+  transition: 200ms ease;
+}
+
 .custom-checkbox {
   border: 2px solid var(--accent-color);
   border-radius: 50%;
@@ -243,15 +275,82 @@ input[type="checkbox"] {
 @media (max-width: 768px) {
   .logo-container {
     width: 70px;
-    height: 224px;
-    transform: translate(-130%, -62%);
+    height: 220px;
+    transform: translate(-162%, -62%);
   }
   h1 {
     margin-top: 250px;
   }
+  .container {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .container > div {
+    width: 100%;
+    min-width: auto;
+    min-height: auto;
+    padding: 15px;
+  }
 }
+
 @media (max-width: 600px) {
   .container {
     flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .container > div {
+    width: 100%;
+    min-width: auto;
+    min-height: auto;
+    padding: 15px;
+  }
+
+  form {
+    flex-direction: column;
+    width: 100%;
+  }
+  button {
+    width: 40%;
+    margin: 10px auto;
+  }
+
+  #todo-input,
+  #due-date-input {
+    width: 100%;
+    flex-grow: unset;
+  }
+
+  #todo-input {
+    margin-bottom: 10px;
+  }
+  li {
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .custom-checkbox {
+    margin-right: 10px;
+  }
+
+  .todo-text {
+    flex-grow: 1;
+    margin-right: 10px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .due-date {
+    font-size: 12px;
+    margin: 0 10px;
+    padding: 0 8px;
+    white-space: nowrap;
+
+    max-width: 120px;
   }
 }
