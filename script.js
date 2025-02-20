@@ -1,3 +1,4 @@
+/************Initialisering af To-do appen  Step 1*/
 document.addEventListener("DOMContentLoaded", function () {
   const todoForm = document.querySelector("form");
   const todoInput = document.getElementById("todo-input");
@@ -7,7 +8,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let allTodos = getTodos();
   updateTodoList();
+  /******************************Håndtering af tema (mørk/lys tilstand) Step 2******************* */
+  const toggleBtn = document.getElementById("toggle-btn");
+  const logo = document.getElementById("lightModeIcon");
+  const tickSound = new Audio("assets/tick.ogg");
+  const body = document.body;
 
+  const savedTheme = localStorage.getItem("theme") || "dark";
+  body.dataset.theme = savedTheme;
+
+  if (savedTheme === "light") {
+    body.classList.add("light-mode");
+    logo.style.display = "none";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    const newTheme = body.dataset.theme === "light" ? "dark" : "light";
+
+    body.dataset.theme = newTheme;
+    localStorage.setItem("theme", newTheme);
+
+    body.classList.toggle("light-mode");
+
+    if (body.classList.contains("light-mode")) {
+      logo.style.display = "none"; // Hide logo in light mode
+    } else {
+      logo.style.display = "block"; // Show logo in dark mode
+    }
+  });
+
+  /******************************Håndtering af tema (mørk/lys tilstand)******************* */
+  /***********Tilføjelse af nye opgaver Step 3********************/
   todoForm.addEventListener("submit", function (e) {
     e.preventDefault();
     addTodo();
@@ -33,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
       dueDateInput.value = "";
     }
   }
-
+  /****************Opdatering af To-do-listen  Step4*/
   function updateTodoList() {
     todoListUl.innerHTML = "";
     completedList.innerHTML = "";
@@ -48,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
+  /**************'HTML elemantar for hver opgaver Step5 */
   function createTodoItem(todo, todoIndex) {
     const todoId = "todo-" + todoIndex;
     const todoLI = document.createElement("li");
@@ -95,30 +126,34 @@ document.addEventListener("DOMContentLoaded", function () {
     const checkbox = todoLI.querySelector("input");
     checkbox.addEventListener("change", () => {
       allTodos[todoIndex].completed = checkbox.checked;
+      if (checkbox.checked) {
+        tickSound.play();
+      }
       saveTodos();
       updateTodoList();
     });
+    /**Markering som færdig*/
     checkbox.checked = todo.completed;
 
     return todoLI;
   }
-
+  /**Ændring af prioritet */
   function togglePriority(todoIndex) {
-    allTodos[todoIndex].priority = !allTodos[todoIndex].priority; // Toggle priority function
+    allTodos[todoIndex].priority = !allTodos[todoIndex].priority;
     saveTodos();
     updateTodoList();
   }
-
+  /**Sletning af opgave */
   function deleteTodoItem(todoIndex) {
     allTodos = allTodos.filter((_, i) => i !== todoIndex);
     saveTodos();
     updateTodoList();
   }
-
+  /**gem data i localstorage som json streng */
   function saveTodos() {
     localStorage.setItem("todos", JSON.stringify(allTodos));
   }
-
+  /**igen konverteres til array via parse gem */
   function getTodos() {
     return JSON.parse(localStorage.getItem("todos") || "[]");
   }
