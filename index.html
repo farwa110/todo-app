@@ -4,23 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
+    <title>Todo App</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://img.icons8.com/pulsar-gradient/48/to-do.png" type="image/png">
 </head>
 
 <body>
-    <a href="/index.html" class="logo-link">
-        <div class="logo-container">
-            <img src="todo.svg" alt="To-Do App Logo" width="350" height="400">
-        </div>
-    </a>
+    <header>
+        <a href="index.html" class="logo-link">
+            <!-- <img src="todo.svg" alt="To-Do App Logo" width="100"> -->
+            <svg id="lightModeIcon" width="654" height="543" viewBox="0 0 654 543" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_24_96)">
+                    <path
+                        d="M262.33 214.07C295.75 210.12 302.18 252.92 266.83 254.32C235.63 255.56 230.53 217.82 262.33 214.07Z"
+                        stroke="#F2F2F2" stroke-width="5.04" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M261.05 270.66C291.06 265.98 303.78 302.7 271.98 310.27C240.53 317.76 226.28 276.08 261.05 270.66Z"
+                        stroke="#F2F2F2" stroke-width="5.04" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M293.52 413.73C324.28 410.36 322.46 447.3 293.52 443.76C275.09 441.5 273.72 415.9 293.52 413.73Z"
+                        stroke="#00FFC4" stroke-miterlimit="10" />
+                    <path
+                        d="M294.81 419.001C312.49 416.821 313.19 436.991 299.31 438.491C283.56 440.191 281.5 420.631 294.81 419.001Z"
+                        fill="#4A4D57" stroke="#00FFC4" stroke-miterlimit="10" />
+                    <path
+                        d="M201.25 202.749C194.62 202.929 189.12 202.029 187.75 208.729C189.03 227.329 186.07 333.129 187.75 339.519C189.35 345.589 193.33 348.95 200.61 350.2C208.88 351.62 300.46 348.79 305.42 350.2C312.48 352.21 324.35 371.58 348.5 350.2C366.64 349.36 447.7 351.31 453.95 350.2C461.65 348.84 465.31 345.339 466.81 338.989C468.39 332.309 465.61 228.879 466.81 208.729C466.01 202.529 459.81 202.809 453.96 202.729"
+                        stroke="#00FFC4" stroke-width="5.54" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M327.28 335.26C327.28 334.55 327.28 333.84 327.28 333.12C327.63 295.5 328.13 257.63 327.28 220.02C327.15 214.19 328.12 200.61 326.34 196.51C323.71 190.46 315.82 187.23 308.63 186.31C298.95 185.07 230.24 187.85 210.25 186.52C201.52 186.44 204.1 193.36 203.82 202.78C206.54 218.35 199.91 330.46 204.72 335.78C205.69 336.86 206.25 336.98 207.68 337.38C213.34 338.96 311.8 337.38 327.18 337.38C342.55 337.38 441.21 339.01 446.87 337.38C447.77 337.12 448.71 337.05 449.31 336.31C452.25 292.02 448.79 247.19 451.18 202.69C451.18 200.95 450.59 199.24 450.47 197.51C450.02 191.09 452.96 186.1 441.73 186.3C421.97 187.65 356.18 185.28 345.93 186.41C336.86 187.41 334.21 189.6 328.57 195.5"
+                        stroke="#00FFC4" stroke-width="5.54" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M384.46 420.169C400.89 418.019 405.43 436.659 388.86 438.819C372.31 440.979 367.95 422.329 384.46 420.169Z"
+                        fill="#4A4D57" stroke="#00FFC4" stroke-width="5.04" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M358.78 310L417.94 310.24" stroke="#F2F2F2" stroke-width="5.04" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M260.34 419.6L261.13 439.89" stroke="#00FFC4" stroke-width="5.04" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M250.78 416.71L270.05 416.8" stroke="#00FFC4" stroke-width="5.04" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path
+                        d="M275.94 231.659C272.6 234.289 269.72 237.419 266.26 240.089C265.39 240.759 264.29 241.519 263.09 241.599C262.2 241.609 261.38 241.289 260.65 240.879C258.66 239.749 256.82 238.149 255.07 236.839C254.47 236.369 253.26 235.439 252.67 235.119C251.46 234.429 251.05 232.879 251.75 231.679C252.44 230.469 253.98 230.059 255.18 230.749C256.28 231.379 257.21 232.149 258.16 232.849C259.57 233.909 261.84 235.819 263.29 236.569C263.34 236.589 263.33 236.569 263.35 236.599C263.15 236.519 262.56 236.529 262.36 236.659C262.58 236.529 262.95 236.289 263.22 236.069C265.47 234.329 268.14 231.759 270.37 229.759C271.24 229.009 272.14 228.159 273.16 227.459C274.25 226.539 276.29 224.619 277.27 224.089C279.21 223.769 280.74 226.189 280.06 227.949C279.22 229.019 277.41 230.399 275.94 231.649V231.659Z"
+                        fill="#CCCCCC" />
+                    <path d="M277 283.55C262.45 294.6 264.53 299.69 254.68 290.01" stroke="#B3B3B3" stroke-width="5.54"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M339.05 441.679C370.88 443.659 369.41 412.419 338.44 417.589L339.05 441.679Z"
+                        stroke="#00FFC4" stroke-width="5.04" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M360.09 209.42L416.67 209.98C419.97 210.09 419.96 214.96 416.62 215.02L360.04 214.46C359.7 214.44 359.16 214.4 358.88 214.33C356.63 213.69 357.19 210.06 358.88 209.56C359.01 209.52 359.48 209.46 360.1 209.42H360.09Z"
+                        fill="#F2F2F2" />
+                    <path d="M358.78 228.72L419.22 228.71" stroke="#F2F2F2" stroke-width="5.04" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path
+                        d="M415.37 247.229L358.79 247.359C355.49 247.289 355.44 242.419 358.78 242.319L415.36 242.189C416.17 242.229 417.01 242.249 417.61 242.359C419.85 242.929 420.54 245.919 418.6 247.339C417.64 247.279 416.39 247.239 415.37 247.229Z"
+                        fill="#F2F2F2" />
+                    <path d="M357.5 261.61L419.86 261.05" stroke="#F2F2F2" stroke-width="5.04" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path
+                        d="M415.37 279.79L358.79 279.92C355.49 279.85 355.44 274.98 358.78 274.88L415.36 274.75C416.17 274.79 417.01 274.81 417.61 274.92C419.85 275.49 420.54 278.48 418.6 279.9C417.64 279.84 416.39 279.8 415.37 279.79Z"
+                        fill="#F2F2F2" />
+                    <path d="M358.78 293.75L419.22 293.98" stroke="#F2F2F2" stroke-width="5.04" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </g>
+                <defs>
+                    <clipPath id="clip0_24_96">
+                        <rect width="653.27" height="542.39" fill="white" />
+                    </clipPath>
+                </defs>
+            </svg>
+        </a>
+        <button id="toggle-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" height="30px" width="30px" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M6.76 4.84l-1.8-1.79-1.42 1.41 1.79 1.8 1.43-1.42zM3 10.5H0v2h3v-2zm9-9h-2v3h2v-3zM21 10.5h3v2h-3v-2zm-1.64-6.04l-1.41-1.41-1.8 1.79 1.42 1.42 1.79-1.8zM12 5.5A6.5 6.5 0 1 1 5.5 12 6.5 6.5 0 0 1 12 5.5m0-2A8.5 8.5 0 1 0 20.5 12 8.5 8.5 0 0 0 12 3.5zM6.76 19.16l-1.79 1.8 1.41 1.41 1.8-1.79-1.42-1.42zM12 19.5a6.5 6.5 0 0 1-6.5-6.5H3a8.5 8.5 0 0 0 8.5 8.5v-3zM17.24 19.16l1.42 1.42 1.8-1.79-1.41-1.41-1.8 1.78zM12 22.5h2v-3h-2v3z" />
+            </svg>
+        </button>
+    </header>
     <h1>To-Do App</h1>
     <form>
         <input type="text" id="todo-input" placeholder="Add a new task" required>
         <input type="date" id="due-date-input">
         <button type="submit">Add</button>
     </form>
+
     <div class="container">
         <div class="item">
             <h2>Tasks To-Do</h2>
@@ -31,6 +98,9 @@
             <ul id="completed-list"></ul>
         </div>
     </div>
+    <footer>
+        <p>© 2025 Min To-Do App</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
